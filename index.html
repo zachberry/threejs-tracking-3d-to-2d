@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tracking 3D Objects in 2D with three.js - Demo</title>
+		<style>
+			body
+			{
+				font-family: Helvetica, Arial, sans-serif;
+				margin: 1em;
+			}
+
+			header
+			{
+				margin-bottom: 1em;
+			}
+
+			/* ===== Embedded styles ===== */
+			.embedded
+			{
+				margin: 0;
+			}
+
+			.embedded .no-embed
+			{
+				display: none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"> <link rel="stylesheet" type="text/css" href="assets/css/screen.css"> <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> <script type="text/javascript" src="js/three.min.js"></script> <script type="text/javascript" src="js/main.js"></script>
+
+	</head>
+	<body>
+		<script type="text/javascript">if(location.hash === '#embed') document.getElementsByTagName('body')[0].className += ' embedded';</script>
+		<header class="no-embed">
+			<h1>Tracking 3D Objects in 2D with three.js - Demo</h1>
+			<p>
+				This example is using three.js revision 53.
+
+			</p>
+			
+			<a href="https://github.com/zachberry/threejs-tracking-3d-to-2d">View code...</a>
+			
+			<a href="http://zachberry.com/blog/tracking-3d-objects-in-2d-with-three-js/">View original article...</a>
+		</header>
+		<div id="viewport"><div id="tracking-overlay"></div></div>
+<div id="controls">
+	<ul>
+		<li>
+			<input checked="checked" type="checkbox" id="rotate" /><label for="rotate">Rotate</label>
+		</li>
+		<li>
+			<label>Camera:</label>
+			<ul>
+				<li>
+					<input name="radios" checked="checked" id="perspective" type="radio"><label for="perspective">Perspective</label>
+				</li>
+				<li>
+					<input name="radios" id="ortho" type="radio"><label for="ortho">Orthographic</label>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<ul id="perspective-controls">
+		<li>
+			<label for="view-angle">View Angle&deg;</label><div id="view-angle"></div><input readonly="readonly" type="text" id="view-angle-input">
+		</li>
+		<li>
+			<label for="camera-z">Camera-X</label><div id="camera-x"></div><input readonly="readonly" type="text" id="camera-x-input">
+		</li>
+		<li>
+			<label for="camera-z">Camera-Y</label><div id="camera-y"></div><input readonly="readonly" type="text" id="camera-y-input">
+		</li>
+		<li>
+			<label for="camera-z">Camera-Z</label><div id="camera-z"></div><input readonly="readonly" type="text" id="camera-z-input">
+		</li>
+	</ul>
+	<ul id="ortho-controls">
+		<li>
+			<label for="ortho-left">Left</label><div id="ortho-left"></div><input readonly="readonly" type="text" id="ortho-left-input">
+		</li>
+		<li>
+			<label for="ortho-right">Right</label><div id="ortho-right"></div><input readonly="readonly" type="text" id="ortho-right-input">
+		</li>
+		<li>
+			<label for="ortho-top">Top</label><div id="ortho-top"></div><input readonly="readonly" type="text" id="ortho-top-input" >
+		</li>
+		<li>
+			<label for="ortho-bottom">Bottom</label><div id="ortho-bottom"></div><input readonly="readonly" type="text" id="ortho-bottom-input">
+		</li>
+	</ul>
+</div>
+	</body>
+</html>

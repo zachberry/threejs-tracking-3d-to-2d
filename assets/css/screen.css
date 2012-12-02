@@ -1,0 +1,71 @@
+#viewport
+{
+	width: 400px;
+	height: 400px;
+	background: white;
+	position: relative;
+	border: 1px solid gray;
+}
+
+#controls
+{
+	width: 400px;
+}
+
+ul
+{
+	list-style-type: none;
+	padding-left: 0;
+}
+
+li
+{
+	width: 100%;
+	display: inline-block;
+	clear: both;
+	margin: 0.2em;
+}
+
+li *
+{
+	float: left;
+	margin-right: 1em;
+}
+
+ul li ul
+{
+	padding: 0;
+}
+
+ul li ul li
+{
+	margin: 0;
+}
+
+label
+{
+	width: 90px;
+}
+
+input[type="text"]
+{
+	float: left;
+	width: 50px;
+}
+
+#tracking-overlay
+{
+	background: url('../../assets/images/target.png');
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 36px;
+	height: 36px;
+}
+
+/* jQuery UI */
+.ui-slider
+{
+	width: 200px;
+	float: left;
+}
