@@ -49,11 +49,8 @@ $(function() {
 		new THREE.MeshLambertMaterial({wireframe: false, color: 0x00CC00})
 	);
 	cube.position.set(0, 0, 0);
-	sphere = new THREE.Mesh(
-		new THREE.SphereGeometry(4, 32, 32),
-		new THREE.MeshLambertMaterial({wireframe:false, color: 0xCCCC00})
-	);
-	sphere.position.set(0, 64, 0);
+	sphere = new THREE.Object3D();
+	sphere.position.set(25, 25, 25);
 	container.add(cube);
 	container.add(sphere);
 	scene.add(container);
