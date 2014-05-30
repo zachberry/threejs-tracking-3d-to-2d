@@ -23,6 +23,7 @@ $(function() {
 	// three.js objects:
 	var renderer;
 	var scene;
+	var vector;
 	var perspectiveCamera;
 	var orthoCamera;
 	var projector;
@@ -38,6 +39,7 @@ $(function() {
 	projector = new THREE.Projector();
 	renderer = new THREE.WebGLRenderer();
 	scene = new THREE.Scene();
+	vector = new THREE.Vector3();
 	perspectiveCamera = new THREE.PerspectiveCamera(DEFAULT_VIEW_ANGLE, WIDTH / HEIGHT, PERSPECTIVE_NEAR, PERSPECTIVE_FAR);
 	perspectiveCamera.position.set(DEFAULT_CAMERA_X, DEFAULT_CAMERA_Y, DEFAULT_CAMERA_Z);
 	orthoCamera = new THREE.OrthographicCamera(DEFAULT_ORTHO_LEFT, DEFAULT_ORTHO_RIGHT, DEFAULT_ORTHO_TOP, DEFAULT_ORTHO_BOTTOM, ORTHO_NEAR, ORTHO_FAR);
@@ -45,7 +47,7 @@ $(function() {
 	pointLight.position.set(10, 50, 150);
 	container = new THREE.Object3D();
 	cube = new THREE.Mesh(
-		new THREE.CubeGeometry(50, 50, 50),
+		new THREE.BoxGeometry(50, 50, 50),
 		new THREE.MeshLambertMaterial({wireframe: false, color: 0x00CC00})
 	);
 	cube.position.set(0, 0, 0);
@@ -103,7 +105,7 @@ $(function() {
 			visibleHeight = orthoCamera.top - orthoCamera.bottom;
 
 			// this will give us position relative to the world
-			p = sphere.matrixWorld.getPosition().clone();
+			p = vector.setFromMatrixPosition(sphere.matrixWorld).clone();
 
 			// determine where in the visible area the sphere is,
 			// with percX=0 meaning the left edge and 1 meaning the right
@@ -116,7 +118,7 @@ $(function() {
 			// perspective:
 
 			// this will give us position relative to the world
-			p = sphere.matrixWorld.getPosition().clone();
+			p = vector.setFromMatrixPosition(sphere.matrixWorld).clone();
 
 			// projectVector will translate position to 2d
 			v = projector.projectVector(p, perspectiveCamera);
